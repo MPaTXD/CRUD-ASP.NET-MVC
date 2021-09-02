@@ -1,0 +1,44 @@
+﻿@model CRUD.Models.Banda
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<h2>Details</h2>
+
+<div>
+    <h4>Banda</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.NomeBanda)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NomeBanda)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EstiloBanda)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EstiloBanda)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.IntegrantesBanda)
+        </dt>
+        @foreach (var item in ViewBag.Musicos)
+        {
+            <dd>
+                @item.Musico.NomeMusico
+            </dd>
+        }
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.BandaId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

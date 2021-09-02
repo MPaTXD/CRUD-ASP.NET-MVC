@@ -1,0 +1,43 @@
+﻿@model IEnumerable<CRUD.Models.Banda>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.NomeBanda)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EstiloBanda)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IntegrantesBanda)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.NomeBanda)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EstiloBanda)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IntegrantesBanda)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.BandaId }) |
+                @Html.ActionLink("Details", "Details", new { id = item.BandaId }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.BandaId })
+            </td>
+        </tr>
+    }
+
+</table>

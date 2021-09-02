@@ -1,0 +1,49 @@
+﻿@model CRUD.Models.Banda
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Banda</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.NomeBanda)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NomeBanda)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EstiloBanda)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EstiloBanda)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IntegrantesBanda)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IntegrantesBanda)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>
